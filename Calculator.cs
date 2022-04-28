@@ -9,10 +9,12 @@ namespace SpeedConveter
 {
     public class Calculator
     {
+        //determinates the prefix depending on user input.
         public static string Prefix(char input1, char input2)
         {
             string prefix1 = "", prefix2 = "";
 
+            //chooses prefix for input.
             switch (input1)
             {
                 case '1':
@@ -32,6 +34,7 @@ namespace SpeedConveter
                     break;
             }
 
+            //chooses prefix for output.
             switch (input2)
             {
                 case '1':
@@ -53,13 +56,15 @@ namespace SpeedConveter
            return ($"{prefix1}-{prefix2}");
         }
 
+        //Calculated the correct speed to the users choice.
         public static double SpeedCalculator1(double speed1, double speed2, char input1, char input2)
         {
-
+            //pulls from Prefix and puts it in prefix string before splitting into string array, and assigning array 0 to prefix1 and array 1 to prefix2.
             string prefix = Calculator.Prefix(input1, input2);
             string[] split = prefix.Split('-');
             string prefix1 = split[0], prefix2 = split[1];
 
+            //preset error message.
             string errmsg = $"You can't convert {prefix1} to {prefix2}";
 
             //what prefix is speed1
@@ -152,6 +157,7 @@ namespace SpeedConveter
                             break;
                     }
                     break;
+
                 //Error message.
                 default:
                     Console.Write(errmsg);
