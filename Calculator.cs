@@ -103,7 +103,7 @@ namespace SpeedConveter
                             break;
 
                         //km/h -> mph.
-                        case '2':
+                        case '3':
                             speed2 = speed1 * 0.6214;
                             break;
 
